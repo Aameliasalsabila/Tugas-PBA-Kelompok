@@ -1,0 +1,25 @@
+# Hasil pemodelan menggunakan model GRU
+
+pemodelan ini menggunakan BiGRU (Birectional Gated Recurrent Unit) merupakan salah satu tenis arsitektur jaringan saraf tiruan.
+BiGRU menggabungkan 2 lapisan GRU dengan arah yang berlawanan dimana satu untuk memproses urutan dari awal sampai akhir (maju),
+sedangkan satunya lagi memiliki proses urutan dari akhir ke awal (mundur). Hal ini digunakan agar model diharapkan
+mampu menagkap informasi/konsep dari informasi yang ada dengan meminimalkan kehilangan informasi dalam data.
+
+pada percobaan ini model GRU menggunakan sejumlah parameter yaitu : 
+- jumlah embedding = 100
+- vocab size = 20000
+- empat kelas (World, Sports, Business, Sci/Tech)
+- Batch size = 64
+- learning rate = 0.01
+- jumlah epoch = 5
+- dropout size = 0.3
+-rnn size = 128
+- rnn layers = 2
+- serta menggunakan Glove sebagai teknik representasi kata yang digunakan.
+
+penggunaan Glove sebagai teknik representasi kata memiliki keunggulan berupa kemampuan representasi kata yang lebih baik, 
+pengurangan dimensi, percepatan proses komputasi, dan masih bayak lagi
+
+hasil dari model yang dijalankan didapati hasil akurasi untuk train sebesar 75.65% dan untuk test sebesar 73.36%
+hasil diatas menunjukan adanya sedikit kondisi overfitting pada model dimana hal ini menyebabkan model terlalu cocok -
+dengan data training sehingga kurang dapat mengeneralisasi data dengan baik. 
