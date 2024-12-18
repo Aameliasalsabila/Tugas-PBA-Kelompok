@@ -1,2 +1,4 @@
 # Analisis Hasil Transformers
-Didapatkan hasil nya 
+Model Transformer menggunakan Train dataset size: 120,000, Test dataset size: 7,600, dan Vocabulary size: 20,000, yang cukup besar untuk mendukung pembelajaran pola dan relasi dalam data. Dataset yang lebih besar dapat meningkatkan performa, tetapi juga membutuhkan lebih banyak waktu dan sumber daya komputasi. Parameter embedding dim = 100 dan NHEAD = 5 sudah memadai, namun jumlah head yang lebih besar dapat meningkatkan beban komputasi. Dengan batch size = 16 dan 5 epoch, proses pelatihan membutuhkan GPU agar lebih cepat.
+
+Dari segi generalisasi, ukuran dataset yang besar membantu model mempelajari pola yang lebih umum, sehingga mengurangi risiko overfitting. Penggunaan embedding pralatih seperti GloVe 100d juga meningkatkan akurasi prediksi. Dalam meningkatkan efisiensi, dapat dipertimbangkan pengaturan batch size, jumlah head, dan penggunaan teknik regulasi seperti Dropout atau early stopping. 
