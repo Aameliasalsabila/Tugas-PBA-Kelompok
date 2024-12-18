@@ -1,0 +1,42 @@
+# parameter global
+model_name: fasttext
+
+# parameter dataset
+dataset: ag_news_csv
+dataset_path: "D:/SEMESTER 7 YUK BISA YUK!!/Tugas_PBA/ag_news_csv/ag_news_csv" # folder tempat dataset disimpan
+output_path: "D:/SEMESTER 7 YUK BISA YUK!!/Tugas_PBA/ag_news_csv/dataclean"  # folder untuk menyimpan file hasil preprocess.py
+
+# parameter preprocessing
+word_limit: 100  # batasan jumlah kata per sampel
+min_word_count: 5  # jumlah kata minimal agar dimasukkan dalam dataset
+
+# parameter embedding kata
+emb_pretrain: True  # false: inisialisasi bobot embedding secara acak
+                    # true: memuat embedding kata yang telah dilatih sebelumnya
+emb_folder: "D:/SEMESTER 7 YUK BISA YUK!!/Tugas_PBA/data/glove.6B.100d.txt"  # hanya relevan jika `emb_pretrain: True`
+emb_filename: glove.6B.100d.txt  # hanya relevan jika `emb_pretrain: True`
+emb_size: 256  # ukuran embedding kata
+               # hanya relevan jika `emb_pretrain: False`
+fine_tune_word_embeddings: True  # apakah embedding kata dapat disesuaikan?
+
+# parameter model
+hidden_size: 10  # ukuran lapisan tersembunyi
+
+# parameter penyimpanan checkpoint
+checkpoint_path: "D:/SEMESTER 7 YUK BISA YUK!!/Tugas_PBA/fasttext"  # jalur untuk menyimpan checkpoint, null jika tidak menyimpan checkpoint
+checkpoint_basename: checkpoint_fasttext  # nama dasar untuk file checkpoint
+
+# parameter pelatihan
+start_epoch: 0  # memulai pelatihan dari epoch ini
+batch_size: 64  # ukuran batch
+lr: 0.001  # learning rate
+lr_decay: 0.9  # faktor untuk mengalikan learning rate (0, 1)
+workers: 4  # jumlah pekerja untuk memuat data di DataLoader
+num_epochs: 10  # jumlah epoch untuk dijalankan
+grad_clip: null  # batasan nilai gradien, null jika tidak ada pembatasan
+print_freq: 2000  # frekuensi pencetakan status pelatihan setiap __ batch
+checkpoint: null  # jalur ke checkpoint model, null jika tidak ada
+
+# parameter tensorboard
+tensorboard: True  # aktifkan tensorboard atau tidak?
+log_dir: "D:/SEMESTER 7 YUK BISA YUK!!/Tugas_PBA/logs/fasttext" # folder untuk menyimpan log tensorboard, hanya relevan jika `tensorboard: True`
